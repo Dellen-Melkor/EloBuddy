@@ -55,6 +55,8 @@ namespace DellenCiciWipi
                     new KeyBind("WPyaz", false, KeyBind.BindTypes.HoldActive, "{Left}".ToCharArray()[0]));
                 var press3 = Hotkeys.Add("ORT",
                     new KeyBind("ORT", false, KeyBind.BindTypes.HoldActive, "{Up}".ToCharArray()[0]));
+                var press4 = Hotkeys.Add("PENS",
+                    new KeyBind("PENS", false, KeyBind.BindTypes.HoldActive, "{Down}".ToCharArray()[0]));
 
 
                 Game.OnUpdate += delegate
@@ -114,6 +116,27 @@ namespace DellenCiciWipi
                             Chat.Say("/all         ('(   ´   ´     ¯~/'   ') ");
                             Chat.Say("/all          |\\                 '     / ");
                             Chat.Say("/all           ''   \\           _ ·´ ");
+
+                            duramk = true;
+                            gameTime1 = Game.Time + 1;
+                        }
+                        if (Game.Time > gameTime1)
+                        {
+                            duramk = false;
+                        }
+                    }
+                    if (press4.CurrentValue)
+                    {
+                        if (duramk == false)
+                        {
+                            Game.Say("/all          ____");
+                            Game.Say("/all        / /     7");
+                            Game.Say("/all       (__,__/\\ ");
+                            Game.Say("/all        \\         \\ ");
+                            Game.Say("/all         \\         \\ ");
+                            Game.Say("/all       __\\         \\__");
+                            Game.Say("/all      (     \\            )");
+                            Game.Say("/all       \\___\\_____/  ");
 
                             duramk = true;
                             gameTime1 = Game.Time + 1;
